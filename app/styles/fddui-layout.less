@@ -1,0 +1,374 @@
+@import './fddui.less';
+
+//百分比宽度
+.fddui-lay-cole5 {width:5%;}
+.fddui-lay-cole10 {width:10%;}
+.fddui-lay-cole15 {width:15%;}
+.fddui-lay-cole20 {width:20%;}
+.fddui-lay-cole25 {width:25%;}
+.fddui-lay-cole30 {width:30%;}
+.fddui-lay-cole35 {width:35%;}
+.fddui-lay-cole40 {width:40%;}
+.fddui-lay-cole45 {width:45%;}
+.fddui-lay-cole50 {width:50%;}
+.fddui-lay-cole55 {width:55%;}
+.fddui-lay-cole60 {width:60%;}
+.fddui-lay-cole65 {width:65%;}
+.fddui-lay-cole70 {width:70%;}
+.fddui-lay-cole75 {width:75%;}
+.fddui-lay-cole80 {width:80%;}
+.fddui-lay-cole85 {width:85%;}
+.fddui-lay-cole90 {width:90%;}
+
+//满屏容器
+.fddui-layblock {
+    width:@pi;
+    height:@pi;
+    position: fixed;
+    article {
+        width:auto;
+        height:42px;
+        top:10px;
+        left:20px;
+        position: absolute;
+        a img {
+            background-size: @pi;
+        }
+    }
+    .link {
+        position: absolute;
+        right:20px;
+        top:26px;
+        color:white;
+        a {
+            color:@maincolor;
+            &:hover {
+                color:@hoveryellow;
+            }
+        }
+    }
+}
+//常用登录
+.fddui-loginwarp {
+    width:@loginwid;
+    .height;
+    .hidden;
+    .margin;
+    margin-top:120px;
+    background:white;
+    .boradius(@pix:3px);
+    figcaption {
+        width:auto;
+        max-width: 165px;
+        .height;
+        a img,img {
+            background-size:@pi;
+        }
+        margin:38px auto;
+    }
+}
+.fddui-loginbox {
+    width:82%;
+    .height;
+    .hidden;
+    .margin;
+    padding-bottom:15px;
+    ul li {
+        margin-top:15px;
+    }
+    input {
+        height:@logininput;
+    }
+    .fddui-error-txt {
+        margin-left:0;
+    }
+    .fddui-link-getpass {
+        float:right;
+        color:@linkcolor;
+        margin-top:15px;
+    }
+    figure {
+        padding:20px 0;
+        text-align: center;
+        color:@linkcolor;
+        a {
+            color:@maincolor;
+            &:hover {
+                color:@hoveryellow;
+            }
+        }
+    }
+}
+//常用注册
+.fddui-registwarp {
+    width:@registwid;
+    .height;
+    .hidden;
+    background:white;
+    .margin;
+    min-height: 100px;
+    .boradius(@pix:3px);
+    margin-top: 120px;
+    .fddui-breadcrumb-2 {
+        border: 1px solid #eaeaea;
+        width: @pi;
+        height: 58px;
+        .margin;
+        .hidden;
+        i {
+            .block;
+            width: 20px;
+            line-height: 20px;
+            margin-right: 10px;
+            color: #c9c9c9;
+            border: 2px solid #c9c9c9;
+            height: 20px;
+            .v_middle;
+            .boradius(@pix:50%);
+            position: relative;
+            &.finshed-icon,&.finshed-icon2{
+                border:0!important;
+                height:24px;
+                width:24px;
+                margin-right:4px;
+                background: url("@{url}arrow-two.png") no-repeat;
+                background-position: -43px -4px;
+            }
+            &.finshed-icon2{
+                background-position: -66px -4px;
+            }
+        }
+        li {
+            width: 50%;
+            float: left;
+            text-align: center;
+            position: relative;
+            line-height: 58px;
+            color: #a2abb2;
+            &.last{
+                &:before {
+                    background: #fff;
+                }
+                &.on:before {
+                    background: #f7f7f7;
+                }
+            }
+            &:before {
+                display: block;
+                content: "";
+                position: absolute;
+                width: 14px;
+                z-index: 19;
+                height: 58px;
+                right: -14px;
+                top: 0;
+                background: url("@{url}arrow-two.png") no-repeat;
+                background-position: -1px -2px;
+            }
+            &.on {
+                background: #f7f7f7;
+                color:#2a2a2a;
+                i{
+                    color: #ffd435;
+                    border:#ffd435 solid 2px;
+                }
+            }
+            &:before {
+                background-position: -24px 0px;
+            }
+        }
+    }
+}
+.fddui-registbox {
+    width:52%;
+    .margin;
+    margin-top:35px;
+    .fddui-error-txt {
+        margin-left:0;
+    }
+    ul li {
+        margin-top:15px;
+    }
+    label {
+        cursor: pointer;
+        input {margin-right: 5px;}
+    }
+    figure {
+        margin:15px 0;
+    }
+    figure a {
+        color:@maincolor;
+        &:hover {color:@hoveryellow}
+    }
+    dt {
+        .block;
+        width:@pi;
+        input {
+            width:70%;
+            float:left;
+        }
+        a,button {
+            width:26%;
+            height:@inputheight;
+            box-sizing: border-box;
+            .bordercolor;
+            float:right;
+            .block;
+            .boradius(@pix:3px);
+            cursor: pointer;
+        }
+        button {
+            background:#eaeaea;
+            &:hover {
+                background:@black;
+                color:white;
+            }
+        }
+    }
+    padding-bottom:15px;
+}
+
+//百分比容器
+.fddui-laybox.fddui-laybox-50,.fddui-laybox-100,.fddui-laybox-200,.fddui-laybox-300,.fddui-laybox-400,.fddui-laybox-500,.fddui-laybox-600 {
+    .hidden;
+    .boradius(@pix:3px);
+    .bordercolor(@color:@tabbordercolor,@pix:1px);
+}
+.fddui-laybox-50 {
+    .boxcss;
+}
+.fddui-laybox-100 {
+    .boxcss(@pix:50+50px);
+}
+.fddui-laybox-200 {
+    .boxcss(@pix:200px);
+}
+.fddui-laybox-300 {
+    .boxcss(@pix:300px);
+}
+.fddui-laybox-400 {
+    .boxcss(@pix:400px);
+}
+.fddui-laybox-500 {
+    .boxcss(@pix:500px);
+}
+.fddui-laybox-600 {
+    .boxcss(@pix:600px);
+}
+
+//辅助
+.fddui-attach-identification {
+    @size:15px;
+    .block;
+    width:@size;
+    height:@size;
+    .boradius(@pix:50%);
+    background:@maincolor;
+    .v_middle;
+    margin-left: 10px;
+}
+.fddui-attach-gohomelink {
+    position: fixed;
+    top:30px;
+    right:340px;
+}
+
+//折叠板
+.fddui-collapse {
+    width:@pi - 1px;
+    .height;
+    .hidden;
+    border:@tabbordercolor solid 1px;
+}
+.fddui-collapse-list {
+    width:@pi - 10%;
+    .margin;
+    .height;
+    .hidden;
+    border-bottom:@tabbordercolor solid 1px;
+    cursor: pointer;
+    .size {
+        height:50px;
+        line-height: 50px;
+    }
+    span {
+        float: left;
+        width:90%;
+        .block(@block:block);
+        .size;
+    }
+    i {
+        float: right;
+        text-align: right;
+        width:10%;
+        .block;
+        .size;
+    }
+}
+.fddui-collapse-arrear {
+    width:@pi - 10%;;
+    .margin;
+    .height;
+    .hidden;
+    line-height: 28px;
+}
+//右边滑出菜单
+.fddui-lay-slipright {
+    width:20%;
+    right:0;
+    position: fixed;
+    height:@pi;
+    background:white;
+    min-width: 180px;
+    max-width:208px;
+    border-left:@tabbordercolor solid 1px;
+    padding:15px;
+    color:@fontcolor;
+    overflow-y: auto;
+    p {
+        @size:20px;
+        margin-top:10px;
+        height:@size;
+        line-height: @size;
+    }
+    .list {
+        .height;
+        ul li {
+            @size:34px;
+            height:@size;
+            line-height: @size;
+            border-bottom:@tabbordercolor solid 1px;
+            a {
+                .block(@block:block);
+                color:@fontcolor;
+                &:hover {
+                    color:@maincolor;
+                }
+            }
+        }
+    }
+}
+//顶部悬浮
+.fddui-lay-fixtop {
+    @size:50px;
+    width:@size;
+    height:@size;
+    .boradius(@pix:50%);
+    background:@maincolor;
+    position: fixed;
+    top:15px;
+    right:270px;
+    cursor: pointer;
+    &:hover {
+        background: @hoveryellow;
+    }
+    i {
+        font-size: 20px;
+        .block;
+        .v_middle;
+        .margin;
+        position: absolute;
+        left:15px;
+        top:15px;
+    }
+}

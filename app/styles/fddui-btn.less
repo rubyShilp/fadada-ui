@@ -1,0 +1,90 @@
+@import './fddui.less';
+
+/*button*/
+.fddbtn(@height:@btnheight,@size:14px,@width:100%,@align:center,@btncolor:#fafafa,@defcolor:#fdd435,@border:none,@color:black,@fontcolor:black){
+    border:@border;
+    height: @height;
+	line-height: @height;
+	font-size: @size;
+	text-align: @align;
+    cursor: pointer;
+    color:@color;
+    background:@btncolor;
+    padding:0 25px;
+    &:hover,&:active {
+        background:@defcolor;
+        color:@fontcolor;
+    }
+}
+button {
+    &:focus {
+        outline:0;
+    }
+}
+button:disabled {
+	cursor: not-allowed;
+}
+.fddui-btn-white,.fddui-btn-yellow,.fddui-btn-blue,.fddui-btn-black,.fddui-btn-gray,.fdd-btn-disabled {
+    .fddbtn;
+    .block(@block:inline-block);
+	.boradius(@pix:3px);
+}
+.fddui-btn-white {
+    .fddbtn(@btncolor:white,@defcolor:@maincolor,@border:1px solid #dcdfe6,@color:black,@fontcolor:black);
+}
+.fddui-btn-yellow {
+    .fddbtn(@btncolor:@maincolor,@defcolor:@hoveryellow);
+}
+.fddui-btn-blue {
+    .fddbtn(@btncolor:@blue,@defcolor:@hoverblue,@color:white,@fontcolor:white);
+}
+.fddui-btn-black {
+    .fddbtn(@btncolor:#2a2a2a,@defcolor:black,@color:white,@fontcolor:white);
+}
+.fddui-btn-gray {
+    .fddbtn(@btncolor:#efefef,@defcolor:@fontcolor,@color:#666,@fontcolor:white);
+}
+.fddui-btn-disabled {
+    .fddbtn(@btncolor:@block_gray,@defcolor:#efefef,@color:#ccc,@fontcolor:#ccc);
+    .fddshaw(@px:0,@color:white);
+    cursor:not-allowed !important;
+}
+.fddui-btn-lar {
+    width:@pi;
+    height:45px !important;
+    line-height: 45px !important;
+}
+.fddui-btn-mix {
+    width:@pi;
+    height:22px !important;
+    line-height: 22px !important;
+}
+.fddui-btn-group {
+    height:@btnheight;
+    line-height: @btnheight;
+    a {
+        float:left;
+        .block;
+        background:white;
+        border:@inputboder solid 1px;
+        margin-left:-1px;
+        color:@fontcolor;
+        padding:0 15px;
+        &:hover {
+            background:@maincolor;
+            color:white;
+        }
+    }
+    .fddui-btn-hover {
+        background:@maincolor;
+        border:@maincolor solid 1px;
+        color:white;
+    }
+    a:nth-child(1){
+        margin-left:0;
+        border-radius:@formradius 0 0 @formradius;
+    }
+    a:last-child {
+        border-radius:0 @formradius @formradius 0;
+    }
+}

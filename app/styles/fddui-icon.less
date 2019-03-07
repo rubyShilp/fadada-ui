@@ -1,0 +1,137 @@
+@import './fddui.less';
+// @font-face {
+// 	font-family:'fadada-icons';
+// 	src:url('./../fonts/iconfont.woff') format("woff"),
+// 		url('./../fonts/iconfont.ttf') format("truetype");
+// 	font-weight:400;
+// 	font-style:normal;
+// }
+[class*=" fddui-icon-"],[class^=fddui-icon-] {
+	font-family:'fadada-icons'!important;
+	speak:none;
+	font-style:normal;
+	font-weight:400;
+	font-variant:normal;
+	text-transform:none;
+	line-height:1;
+	vertical-align:baseline;
+	display:inline-block;
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale;
+    font-size: 18px;
+    .v_middle;
+}
+.fddui-icon-remind:before {
+	content: "\e626";    //提醒
+}
+.fddui-icon-remind2:before {
+	content: "\e637";    //提醒2
+}
+.fddui-icon-magnifier:before {
+	content: "\e62b";    //放大镜
+}
+.fddui-icon-upload:before {
+	content: "\e638";    //上传
+}
+.fddui-icon-upload2:before {
+	content: "\e74f";    //上传2
+}
+.fddui-icon-download:before {
+	content: "\e639";    //下载
+}
+.fddui-icon-user:before {
+	content: "\e619";    //人
+}
+.fddui-icon-question:before {
+	content: "\e62a";    //问号
+}
+.fddui-icon-file:before {
+	content: "\e73e";    //文件
+}
+.fddui-icon-del:before {
+	content: "\e68c";    //删除
+}
+.fddui-icon-singing:before {
+	content: "\e641";    //签署
+}
+.fddui-icon-out:before {
+	content: "\e63a";    //退出
+}
+.fddui-icon-pencil:before {
+	content: "\e96c";    //铅笔
+}
+.fddui-icon-date:before {
+	content: "\e60f";    //日期
+}
+.fddui-icon-users:before {
+	content: "\e624";    //3人
+}
+.fddui-icon-left:before {
+	content: "\e606";    //箭头左中
+}
+.fddui-icon-arrow:before {
+	content: "\e61f";    //箭头右
+}
+.fddui-icon-date2:before {
+	content: "\e7e7";    //日期2
+}
+.fddui-icon-shop:before {
+	content: "\e629";    //购物车
+}
+.fddui-icon-top:before {
+	content: "\e62d";    //箭头上
+}
+.fddui-icon-house:before {
+	content: "\e8ff";    //房子
+}
+.fddui-icon-eyes:before {
+	content: "\eb45";    //闭眼
+}
+.fddui-icon-openeyes:before {
+	content: "\eb46";    //睁眼
+}
+.fddui-icon-arrowbom:before {
+	content: "\e695";	//向下箭头
+}
+
+.icon-list{
+	overflow: hidden;
+    list-style: none;
+	padding: 0;
+	width:80%;
+    border: 1px solid #eaeefb;
+	border-radius: 4px;
+	li{
+		float: left;
+		width: 16.66%;
+		text-align: center;
+		height: 100px;
+		line-height: 100px;
+		color: #666;
+		font-size: 13px;
+		transition: color .15s linear;
+		border-right: 1px solid #eee;
+		border-bottom: 1px solid #eee;
+		margin-right: -1px;
+		margin-bottom: -1px;
+		i{
+			display: block;
+			font-size: 32px;
+			margin-bottom: 15px;
+			color: #606266;
+		}
+		.icon-name{
+			display: inline-block;
+			padding: 0 3px;
+			height: 1em;
+			color: #606266;
+		}
+		span{
+			display: inline-block;
+			line-height: normal;
+			vertical-align: middle;
+			color: #99a9bf;
+			font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,SimSun,sans-serif;
+		}
+	}
+}

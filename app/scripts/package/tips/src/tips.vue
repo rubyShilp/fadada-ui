@@ -1,0 +1,79 @@
+<template>
+<div class="fa-tips-slot-title">
+    <span :class="className" :style="{'margin-top':height+'px','margin-left':width+'px'}">
+        <slot name='content'></slot>
+        <i :class="classIcon"></i>
+    </span>
+    <div class='tipId' v-fa-client='init'><slot></slot></div>
+</div>
+</template>
+<script>
+export default {
+    data(){
+        return{
+            isTips:false,//是否显示tips
+            height:'',
+            width:"",
+            className:'',//显示位置
+            classIcon:'',//显示的ICON
+        }
+    },
+    props:{
+        //判断当前tips显示的位置
+        placement:{
+            type:String,
+            default:'top'
+        }
+    },
+    mounted(){
+        this.placementHident();
+    },
+    methods:{
+        init(info){
+            if(this.placement==='top'){
+                this.height=-(info.height+8);
+                this.width=0;
+            }
+            if(this.placement==='right'){
+                this.height=0;
+                this.width=info.width+21;
+            }
+            if(this.placement==='down'){
+                this.height=info.height+8;
+                this.width=0;
+            }
+            if(this.placement==='left'){
+                this.height=0;
+                this.width=-info.width;
+            }
+        },
+        //根据当前placement的值判断当前tips显示的位置
+        placementHident(){
+            if(this.placement==='top'){
+                this.className='fa-tips-top';
+                this.classIcon='fa-triangleborder-top';
+                this.height=-(this.height+8);
+                this.width=0;
+            }
+            if(this.placement==='right'){
+                this.className='fa-tips-right';
+                this.classIcon='fa-triangleborder-right';
+                this.height=0;
+                this.width=this.width+21;
+            }
+            if(this.placement==='down'){
+                this.className='fa-tips-down';
+                this.classIcon='fa-triangleborder-down';
+                this.height=this.height+8;
+                this.width=0;
+            }
+            if(this.placement==='left'){
+                this.className='fa-tips-left';
+                this.classIcon='fa-triangleborder-left';
+                this.height=0;
+                this.width=-this.width;
+            }
+        }
+    }
+}
+</script>

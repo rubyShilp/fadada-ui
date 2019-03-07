@@ -1,0 +1,94 @@
+@import './fddui.less';
+
+/*color*/
+.fddui-color-gray,.fddui-link-gray {
+    color:@linkcolor;
+}
+.fddui-color-yellow,.fddui-link-yellow {
+    color:@maincolor;
+}
+.fddui-color-blue,.fddui-link-blue {
+    color:@blue;
+}
+.fddui-color-black,.fddui-link-black {
+    color:@black;
+}
+.fddui-color-orange,.fddui-link-orange {
+    color:@orange;
+}
+.fddui-color-red,.fddui-link-red {
+    color:@red;
+}
+
+/*link*/
+.fddui-link-gray {
+    &:hover {
+        color:@hoverblack;
+    }
+}
+.fddui-link-yellow {
+    &:hover {
+        color:@hoveryellow;
+    }
+}
+.fddui-link-blue {
+    &:hover {
+        color:@hoverblue;
+    }
+}
+.fddui-link-black {
+    &:hover {
+        color:@hoverblack;
+    }
+}
+.fddui-link-orange {
+    &:hover {
+        color:@hoverorange;
+    }
+}
+.fddui-link-red {
+    &:hover {
+        color:@hoverred;
+    }
+}
+/*fonts*/
+.fddui-line-under {
+    text-decoration:underline;
+}
+.fddui-line-through {
+    text-decoration: line-through;
+}
+.fddui-font-italic {
+    font-style:italic;
+}
+.fddui-font-bold {
+    font-weight: bold;
+}
+.fddui-font-overflow {
+    position: relative;
+    span {
+        width:@pi;
+        .block;
+        .fonthidden;
+    }
+    i {
+        position: absolute;
+        background: @tipbg;
+        padding:8px 15px;
+        color:white;
+        .boradius(@pix:3px);
+        left: 0;
+        top:25px;
+        .block(@block:none);
+    }
+    &:hover {
+        i {
+            .block;
+        }
+    }
+}
+
+
+
+
+

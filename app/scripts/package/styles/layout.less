@@ -1,0 +1,11 @@
+@iterations:12;
+.fa-row{
+    .mixin-loop (@i,@type) when (@i > 0) {
+        .fa-@{type}-@{i}{
+          width: 100% / (@iterations / @i );
+          display:inline-block;
+        }
+        .mixin-loop(@i - 1,@type);
+    }
+    .mixin-loop(@iterations,col)
+}

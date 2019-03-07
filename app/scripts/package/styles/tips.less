@@ -1,0 +1,144 @@
+@triangsize:6px;
+@tipbg:rgba(33,42,49,0.8);
+.block(@block:inline-block) {         //block显示
+	display: @block;
+}
+.boradius(@pix:3px) {                 //圆角默认3px
+	border-radius: @pix;
+	-ms-border-radius:@pix;
+	-moz-border-radius:@pix;
+	-o-border-radius:@pix;
+	-webkit-border-radius:@pix;
+}
+.margin(@left:0,@right:auto){         //margin
+    margin:@left @right;
+}
+.fa-tips {
+     position: relative;
+     &:hover {
+         span {
+             .block;
+         }
+     }
+     span {
+        position: absolute;
+        background: @tipbg;
+        z-index: 100;
+        padding:0 15px;
+        color:white;
+        .boradius(@pix:3px);
+        .block(@block:none);
+        i {
+            width:0;
+            height:0;
+            border-style:solid;
+            .margin;
+            .block;
+            position:absolute;
+        }
+    }
+    .left {
+        left:-70px;
+    }
+    .bottom {
+        left:0;
+        top:30px;
+        i {
+            background:none;
+            border-width:0 @triangsize @triangsize;
+            border-color:transparent transparent @tipbg;
+            left: 10px;
+            top:-6px;
+        }
+    }
+}
+
+.fa-tips-box {
+    position: absolute;
+    height:100px;
+}
+.fa-triangleborder-top {
+    border-color:@tipbg transparent transparent;
+    border-width:@triangsize @triangsize 0;
+    left: 20px;
+    top:36px;
+}
+.fa-triangleborder-right {
+    background:none;
+    border-top: @triangsize solid transparent;
+    border-right: @triangsize solid @tipbg;
+    border-bottom: @triangsize solid transparent;
+    left: -9px;
+    top:8px;
+}
+.fa-triangleborder-down {
+    background:none;
+    border-width:0 @triangsize @triangsize;
+    border-color:transparent transparent @tipbg;
+    left: 20px;
+    top:-7px;
+}
+.fa-triangleborder-left {
+    background:none;
+    border-width:@triangsize 0 @triangsize @triangsize;
+    border-color:transparent transparent transparent @tipbg;
+    left: 86px;
+    top: 10px;
+}
+.fa-tips-top,.fa-tips-left,.fa-tips-right,.fa-tips-down {
+    display: none;
+    background:@tipbg;
+    color:white;
+    padding:0 15px;
+    .boradius(@pix:5px);
+    height:38px;
+    line-height: 38px;
+    position: absolute;
+    z-index:9999;
+    -webkit-animation:show 0.3s ease-in; 
+    i {
+        width:0;
+        height:0;
+        border-style:solid;
+        .margin;
+        .block;
+        position:absolute;
+    }
+}
+.fa-tips-right {
+    margin-top:-40px;
+    margin-left:70px;
+}
+.fa-tips-down {
+    margin-top:10px;
+    margin-left:-5%;
+}
+.fa-tips-left {
+    margin-top:-40px;
+    margin-left:-210px;
+}
+@-webkit-keyframes show {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+.tipId{
+    width: auto;
+    height: auto;
+    display:inline-block;
+}
+.fa-tips-slot-title{
+    &:hover{
+        .fa-tips-top{
+            display:block;
+        }
+        .fa-tips-right{
+            display:block;
+        }
+        .fa-tips-down{
+            display:block;
+        }
+        .fa-tips-left{
+            display:block;
+        }
+    }
+}

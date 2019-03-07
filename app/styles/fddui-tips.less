@@ -1,0 +1,115 @@
+@import './fddui.less';
+
+/*tips*/
+@triangsize:6px;
+.fddui-tips {
+     position: relative;
+     &:hover {
+         span {
+             .block;
+         }
+     }
+     span {
+        position: absolute;
+        background: @tipbg;
+        z-index: 100;
+        padding:0 15px;
+        color:white;
+        .boradius(@pix:3px);
+        .block(@block:none);
+        i {
+            width:0;
+            height:0;
+            border-style:solid;
+            .margin;
+            .block;
+            position:absolute;
+        }
+    }
+    .left {
+        left:-70px;
+    }
+    .bottom {
+        left:0;
+        top:30px;
+        i {
+            background:none;
+            border-width:0 @triangsize @triangsize;
+            border-color:transparent transparent @tipbg;
+            left: 10px;
+            top:-6px;
+        }
+    }
+}
+
+.fddui-tips-box {
+    position: absolute;
+    height:100px;
+}
+.fddui-triangleborder-top {
+    border-color:@tipbg transparent transparent;
+    border-width:@triangsize @triangsize 0;
+    left: 20px;
+    top:36px;
+}
+.fddui-triangleborder-right {
+    background:none;
+    border-top: @triangsize solid transparent;
+    border-right: @triangsize solid @tipbg;
+    border-bottom: @triangsize solid transparent;
+    left: -9px;
+    top:8px;
+}
+.fddui-triangleborder-down {
+    background:none;
+    border-width:0 @triangsize @triangsize;
+    border-color:transparent transparent @tipbg;
+    left: 20px;
+    top:-7px;
+}
+.fddui-triangleborder-left {
+    background:none;
+    border-width:@triangsize 0 @triangsize @triangsize;
+    border-color:transparent transparent transparent @tipbg;
+    left: 138px;
+    top:5px;
+}
+.fddui-tips-top,.fddui-tips-left,.fddui-tips-right,.fddui-tips-down {
+    .block;
+    background:@tipbg;
+    color:white;
+    padding:0 15px;
+    .boradius(@pix:5px);
+    height:38px;
+    line-height: 38px;
+    position: absolute;
+    -webkit-animation:show 0.3s ease-in; 
+    i {
+        width:0;
+        height:0;
+        border-style:solid;
+        .margin;
+        .block;
+        position:absolute;
+    }
+}
+.fddui-tips-top {
+    margin-top:-90px;
+    margin-left:-5%;
+}
+.fddui-tips-right {
+    margin-top:-40px;
+    margin-left:70px;
+}
+.fddui-tips-down {
+    margin-top:10px;
+    margin-left:-5%;
+}
+.fddui-tips-left {
+    margin-top:-40px;
+    margin-left:-210px;
+}
+@-webkit-keyframes show {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}

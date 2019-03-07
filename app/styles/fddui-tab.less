@@ -1,0 +1,105 @@
+@import './fddui.less';
+
+.divFile{
+    border: 1px solid #fdd435;
+    height:200px;
+    width:401px;
+}
+/*table*/
+table{
+	border-spacing:0;
+	background:@tablebg;
+    box-sizing: border-box;
+    table-layout: fixed;
+    display: table;
+    border-collapse: separate;
+}
+.fddui-table {
+    width:@pi;
+    border:@tabbordercolor solid 1px;
+    border-collapse: collapse;
+    a {
+        margin-right:5px;
+    }
+    thead {
+        background: @block_gray;
+    }
+    tr {
+        height:@tr;
+        border-bottom:@tabbordercolor solid 1px;
+        td,th {
+            height:@tr;
+            .center;
+            color:@fontcolor;
+        }
+        td {
+            color:@fontcolor;
+        }
+        &:hover {
+            background:@hovertab;
+        }
+    }
+    tr:last-child {
+        border-bottom:none;
+    }
+    .left {
+        text-align: left;
+    }
+}
+.fddui-page {
+    width:@pagewidth;
+    height:@pageheight;
+    padding-top:20px;
+    .left {
+        float:left;
+        text-align: left;
+    }
+    .right {
+        float: right;
+        text-align: right;
+    }
+    .fddui-page-num {
+        width:30%;
+        ul {
+            li {
+                .block;
+                height:@pageheight;
+                color:@linkcolor;
+            }
+        }
+    }
+    .fddui-page-size {
+        ul {
+            li {
+                float:left;
+                height:@pageheight;
+                .size {
+                    width:30px;
+                    height:30px;
+                    text-align: center;
+                    line-height: 30px;
+                }
+                .currpage {
+                    width:auto;
+                }
+                a {
+                    .size;
+                    .block;
+                    color:@linkcolor;
+                    &:hover {
+                        color:@maincolor;
+                    }
+                }
+                .active {
+                    .size;
+                    .boradius(@pix:3px);
+                    background:@maincolor;
+                    color:black;
+                    &:hover {
+                        color:black;
+                    }
+                }
+            }
+        }
+    }
+}
