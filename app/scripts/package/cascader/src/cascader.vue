@@ -1,24 +1,17 @@
 <template>
-<div class="fa-input" :style="{'width':width+'px'}" :class="{'has-label':label}" v-if="type!=='textarea'">
-    <div class="fa-input-label" :class="{'float':!focus && !model}">{{label}}</div>
-    <div class="fa-select fa-input-content fa-select-position" :class="{'is-open':!focus}">
-        <div class="fa-select-content">
-            <input tabindex="0"  class="fa-select-input" type="hidden"  v-model="model"/>
-            <input class="fa-select-input" @focus.stop="focus = true;showHideOptions()"  readonly
-            @blur="focus = false;" :placeholder="placeholder"  :disabled="disabled"  ref="values">
-        </div>
-        <div class="fa-select-action">
-            <svg viewBox="0 0 24 24" class="fa-select-icon"><path d="M7 10l5 5 5-5z"></path></svg>
-        </div>
-        <div>
-            <div class="fa-input-line"></div>
-            <div class="fa-input-focus-line " :class="{'fa-input__focus':focus,'focus':focus,'disabled':disabled}"></div>
-        </div>
-    </div>
-    <div class="fa-cascader-option" :style="{'top':label?'58px':'38px'}" v-if="showOptions">
+<div>
+    <fa-input v-model="model" @click="showHideOptions()"></fa-input>
+    <div class="fa-cascader-option" :style="{'top':label?'58px':'214px'}" v-if="showOptions">
         <fa-scrollbar class="fa-cascader-menu">
+            <ul>
+                <li v-for="(item,index) of options" :key="index" @click="selectOptions(index,item)">
+                    <a href="javaScript:;">{{item.label}}</a>
+                    <i class="fa-icon-arrow-right" v-if="item.children"></i>
+                </li>
+            </ul>
+            <!-- 
             <p @click="selectAll()"><em>全部</em></p>
-            <p v-for="(item,index) of options" :key="index" @click="selectOptions(index,item)"><fa-checkbox v-if="!item.children && showChecked" v-model="item.checked">{{item.label}}</fa-checkbox><em v-if="item.children || !showChecked">{{item.label}}</em><i class="fa-icon-arrow-right" v-if="item.children"></i></p>
+            <p v-for="(item,index) of options" :key="index" @click="selectOptions(index,item)"><fa-checkbox v-if="!item.children && showChecked" v-model="item.checked">{{item.label}}</fa-checkbox><em v-if="item.children || !showChecked">{{item.label}}</em><i class="fa-icon-arrow-right" v-if="item.children"></i></p> -->
         </fa-scrollbar>
         <fa-options :options='options[index].children' :className='className' :checkRadio='checkRadio' :classCancel='classCancel' :showChecked='showChecked' v-if="index>=0 && options[index].children"></fa-options>
     </div>

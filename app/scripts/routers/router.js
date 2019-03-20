@@ -44,7 +44,7 @@ const scrollBehavior = (to, from, savedPosition) => {
 
 //首页
 const mainRouter = [
-    {path: '', redirect: '/main' },
+    {path: '', redirect: '/home' },
     {path: '/main', name: 'main', component: main, meta: { scrollToTop: true ,requireAuth:true},children:[
         { path: '/home', name: 'home', component: home, meta: { scrollToTop: true } },
         { path: '/sign', name: 'sign', component: sign, meta: { scrollToTop: true } },
@@ -75,7 +75,7 @@ const routes = [
 
 // 创建router实例
 const router = new VueRouter({
-    mode: 'hash',
+    mode: 'history',
     base: __dirname,
     scrollBehavior,
     routes: routes,

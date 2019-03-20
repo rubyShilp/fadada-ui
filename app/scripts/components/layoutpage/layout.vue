@@ -18,6 +18,7 @@
                 <fa-col span='4'><div class="grid-content">44444</div></fa-col>
                 <fa-col span='5'><div class="grid-content bg-purple-dark">333333</div></fa-col>
             </fa-row>
+            <fa-cascader :options='options'></fa-cascader>
         </div>
     </div>
 </template>
