@@ -26,9 +26,9 @@
     <div class="fa-tree-node__content"
       :style="{ 'padding-left': (node.level - 1) * tree.indent + 'px' }">
       <span
-        class="fa-tree-node__expand-icon fa-icon-caret-right"
+        class="fa-tree-node__expand-icon"
         @click.stop="handleExpandIconClick"
-        :class="{ 'is-leaf': node.isLeaf, expanded: !node.isLeaf && expanded }">
+        :class="{ 'is-leaf': node.isLeaf,'fa-icon-caret-right':!node.expanded,'fa-icon-caret-left':node.expanded }">
       </span>
       <fa-checkbox
         v-if="showCheckbox"

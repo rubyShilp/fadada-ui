@@ -3,12 +3,12 @@
         <div class="com-pop" :style="{'width':width+'px','height':height+'px'}">
             <div class="fixed-pop-tit">{{title}}</div>
             <a href="javascript:;" class="close-icon" v-if="isClose" @click="close()"><i class="fa-icon-close"></i></a>
-            <fa-scrollbar class="com-pop-text" :style="{'height':(height-64)+'px','min-height':'300px','max-height':'500px'}">
+            <div class="com-pop-text">
                 <slot></slot>
                 <div class="fa-dialog-footer">
                     <slot name='footer'></slot>
                 </div>
-            </fa-scrollbar>
+            </div>
         </div>
     </div>  
 </template>

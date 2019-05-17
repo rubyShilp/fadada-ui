@@ -11,6 +11,7 @@ module.exports={
     context: path.join(process.cwd(), 'app'),
     output: {
         path: path.join(__dirname, './lib'),
+        publicPath:'/',
         filename: 'index.js',
         library: 'fadada-ui',
         libraryTarget: 'umd',
@@ -69,8 +70,7 @@ module.exports={
                 uglifyOptions: {
                     compress: false
                 }
-            }),
-            new OptimizeCssAssetsPlugin()
+            })
         ]
     },
     plugins:[
@@ -78,7 +78,8 @@ module.exports={
         new webpack.ProgressPlugin(),
         new webpack.HotModuleReplacementPlugin(),
         new MiniCssExtractPlugin({
-            filename: "main-yellow.css",
+            filename: "main-blue.css",
         }),
+        new OptimizeCssAssetsPlugin()
     ]
 }

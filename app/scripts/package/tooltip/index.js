@@ -1,8 +1,7 @@
-import Tooltip from './src/tooltip.vue';
-
+import faTooltip from './src/main';
 /* istanbul ignore next */
-Tooltip.install = function(Vue) {
-  Vue.component(Tooltip.name, Tooltip);
+faTooltip.install = function(Vue) {
+  Vue.component(faTooltip.name, faTooltip);
 };
 
-export default Tooltip;
+export default faTooltip;

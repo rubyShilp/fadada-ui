@@ -39,6 +39,7 @@ import faCol from './layoutCol/index.js';
 import faSteps from './steps/index.js';
 import faStep from './step/idnex.js';
 import faToggleButton from './toggleButton/index.js';
+import faPopover from './popover/index.js';
 const components={
     faTag,
     faInput,
@@ -75,7 +76,8 @@ const components={
     faCol,
     faSteps,
     faStep,
-    faToggleButton
+    faToggleButton,
+    faPopover
 }
 const install = function(Vue, opts = {}) {
     locale.use(opts.locale);
@@ -130,6 +132,7 @@ module.exports={
     faCol,
     faSteps,
     faStep,
-    faToggleButton
+    faToggleButton,
+    faPopover
 }
 module.exports.default = module.exports;

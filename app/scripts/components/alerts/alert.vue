@@ -13,6 +13,10 @@
                     <fa-button type='danger' plain @click="openMessage(4)">错误</fa-button>
                     <fa-button type='own' plain @click="openMessage(5)">官方</fa-button>
                     <fa-button type='own' plain @click="openMessage(6)">默认</fa-button>
+                    <fa-popover ref="popover1" placement="top-start" trigger="hover">
+                        asdasdads
+                    </fa-popover>
+                    <a href="javaScript:;" v-popover:popover1>hover 激活</a>
                 </div>
                 <div class="fddui-pre" style="margin-bottom:0">
                     <code><h3>#提示框使用</h3></code><br>
@@ -91,18 +95,10 @@
                 </code>
             </div>
             <!--默认提示-->
-            <fa-dialog title="自定义标题" width='550' height='220' :visible='dialog1' @beforeClose='dialog1=false'>
-                <fa-form label-position="right" label-width="80px">
-                    <fa-form-item label="名称" required>
-                    <fa-input v-model="formLabelAlign.name" maxlength='20'></fa-input>
-                    </fa-form-item>
-                    <fa-form-item label="活动区域">
-                    <fa-input v-model="formLabelAlign.region" maxlength='20'></fa-input>
-                    </fa-form-item>
-                    <!-- <fa-form-item label="活动形式">
-                    <fa-input v-model="formLabelAlign.type"></fa-input>
-                    </fa-form-item> -->
-                </fa-form>
+            <fa-dialog title="自定义标题" width='550' height='80' :visible='dialog1' @beforeClose='dialog1=false'>
+                <div>
+                    123123121213
+                </div>
                 <div slot="footer">
                     <fa-button type='own' @click="dialog1=false">确认</fa-button>
                     <fa-button type='info' @click="dialog1=false">取消</fa-button>

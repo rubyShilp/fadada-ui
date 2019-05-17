@@ -16,14 +16,14 @@
     </div>
     <div class="fddcase-form-rili-pop" v-if="showDate">
         <div class="rili-tit">
-            <a href="javaScript:;" class="left" @click="monthYearUpDown(dateMonth-1,1,$event)"><i class="fddcase-ico-left"></i></a>
+            <a href="javaScript:;" class="left" @click="monthYearUpDown(dateMonth-1,1,$event)"><i class="fa-icon-arrow-left"></i></a>
             <span style="cursor:pointer" @click="showHideYearMonth(1)">
                 {{dateMonth}}月
             </span>
             <span style="cursor:pointer" @click="showHideYearMonth(2)">
                 {{dateYear}}
             </span>
-            <a href="javaScript:;" class="right" @click="monthYearUpDown(dateMonth+1,2,$event)"><i class="fddcase-ico-arrowx"></i></a>
+            <a href="javaScript:;" class="right" @click="monthYearUpDown(dateMonth+1,2,$event)"><i class="fa-icon-arrow-right"></i></a>
         </div>
         <div class="rili-list" :style="{'display':showYear?'block':'none'}">
             <ul class="rili-list-nian" v-for="year of years" :key="year">
@@ -76,51 +76,7 @@
 </template>
 <script src='./datePicker.js'></script>
 <style lang="less" scoped>
-/* 字體圖標 */
-@font-face {
-  font-family: 'fddcase';
-  src:  url('./fonts/fddcase.eot?ilwzoe');
-  src:  url('./fonts/fddcase.eot?ilwzoe#iefix') format('embedded-opentype'),
-  url('./fonts/fddcase.ttf?ilwzoe') format('truetype'),
-  url('./fonts/fddcase.woff?ilwzoe') format('woff'),
-  url('./fonts/fddcase.svg?ilwzoe#fddcase') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-
-[class^="fddcase-ico-"], [class*=" fddcase-ico-"],.fddcase-checbox-off{
-  /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'fddcase' !important;
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-
-  /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.fddcase-ico-rili:before {
-  content: "\e939";
-}
-.fddcase-ico-left{
-  color: #a6a6a6;
-}
-.fddcase-ico-left:before {
-  content: "\e927";
-}
-.fddcase-ico-arrowx{
-  color: #a6a6a6;
-}
-.fddcase-ico-arrowx:before {
-  content: "\e91a";
-}
-
 *{margin: 0; padding: 0}
-
 input[type=text], input[type=password], select, textarea {
   @height:32px;
   .radius();
@@ -225,6 +181,7 @@ input[type=text], input[type=password], select, textarea {
         height: 20px;
         line-height: 20px;
         position: absolute;
+        color: #000;
         top:8px;
         .radius(@radius: 100%);
         &:hover{

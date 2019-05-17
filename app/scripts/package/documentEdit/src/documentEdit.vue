@@ -86,9 +86,4 @@
     </div>
 </div>   
 </template>
-<style scoped>
-.fa-scrollbar__wrap {
-    overflow-x: hidden;
-}
-</style>
 <script src='./documentEdit.js'></script>

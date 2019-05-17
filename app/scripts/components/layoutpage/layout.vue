@@ -3,8 +3,8 @@
         <!-- <fa-document-edit></fa-document-edit> -->
         <v-menu :islayout="true"></v-menu>
         <v-top></v-top>
-        
-        <div class="fommain">
+        <div id='webGL'></div>
+        <!-- <div class="fommain">
             <h1>layout布局</h1>
             <h3 class="fddui-color-gray fddui-margin-30">
                 默认包含官网以及定制项目常用布局
@@ -19,7 +19,7 @@
                 <fa-col span='5'><div class="grid-content bg-purple-dark">333333</div></fa-col>
             </fa-row>
             <fa-cascader :options='options'></fa-cascader>
-        </div>
+        </div> -->
     </div>
 </template>
 <script src="./layout.js"></script>
@@ -31,4 +31,9 @@
 .bg-purple-dark{
     background: #99a9bf;
 }
+#webGL{
+    padding-top: 150px;
+    background: #fff;
+}
+canvas { width: 100%; height: 100%; }
 </style>

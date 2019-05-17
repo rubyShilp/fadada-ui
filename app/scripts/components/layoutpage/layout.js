@@ -1,207 +1,9 @@
 import Menu from './../../util/components/common/menu.vue';
 import Slip from './../../util/components/common/slip.vue';
 import Top from './../../util/components/common/top.vue';
-import axios from 'axios';
-
 export default {
     data() {
         return {
-            active:0,
-            options:[{
-                value: 'zhinan',
-                label: '指南',
-                children: [{
-                  value: 'shejiyuanze',
-                  label: '设计原则',
-                  children: [{
-                    value: 'yizhi',
-                    label: '一致'
-                  }, {
-                    value: 'fankui',
-                    label: '反馈'
-                  }, {
-                    value: 'xiaolv',
-                    label: '效率'
-                  }, {
-                    value: 'kekong',
-                    label: '可控'
-                  }]
-                }, {
-                  value: 'daohang',
-                  label: '导航',
-                  children: [{
-                    value: 'cexiangdaohang',
-                    label: '侧向导航'
-                  }, {
-                    value: 'dingbudaohang',
-                    label: '顶部导航'
-                  }]
-                }]
-              }, {
-                value: 'zujian',
-                label: '组件',
-                children: [{
-                  value: 'basic',
-                  label: 'Basic',
-                  children: [{
-                    value: 'layout',
-                    label: 'Layout 布局'
-                  }, {
-                    value: 'color',
-                    label: 'Color 色彩'
-                  }, {
-                    value: 'typography',
-                    label: 'Typography 字体'
-                  }, {
-                    value: 'icon',
-                    label: 'Icon 图标'
-                  }, {
-                    value: 'button',
-                    label: 'Button 按钮'
-                  }]
-                }, {
-                  value: 'form',
-                  label: 'Form',
-                  children: [{
-                    value: 'radio',
-                    label: 'Radio 单选框'
-                  }, {
-                    value: 'checkbox',
-                    label: 'Checkbox 多选框'
-                  }, {
-                    value: 'input',
-                    label: 'Input 输入框'
-                  }, {
-                    value: 'input-number',
-                    label: 'InputNumber 计数器'
-                  }, {
-                    value: 'select',
-                    label: 'Select 选择器'
-                  }, {
-                    value: 'cascader',
-                    label: 'Cascader 级联选择器'
-                  }, {
-                    value: 'switch',
-                    label: 'Switch 开关'
-                  }, {
-                    value: 'slider',
-                    label: 'Slider 滑块'
-                  }, {
-                    value: 'time-picker',
-                    label: 'TimePicker 时间选择器'
-                  }, {
-                    value: 'date-picker',
-                    label: 'DatePicker 日期选择器'
-                  }, {
-                    value: 'datetime-picker',
-                    label: 'DateTimePicker 日期时间选择器'
-                  }, {
-                    value: 'upload',
-                    label: 'Upload 上传'
-                  }, {
-                    value: 'rate',
-                    label: 'Rate 评分'
-                  }, {
-                    value: 'form',
-                    label: 'Form 表单'
-                  }]
-                }, {
-                  value: 'data',
-                  label: 'Data',
-                  children: [{
-                    value: 'table',
-                    label: 'Table 表格'
-                  }, {
-                    value: 'tag',
-                    label: 'Tag 标签'
-                  }, {
-                    value: 'progress',
-                    label: 'Progress 进度条'
-                  }, {
-                    value: 'tree',
-                    label: 'Tree 树形控件'
-                  }, {
-                    value: 'pagination',
-                    label: 'Pagination 分页'
-                  }, {
-                    value: 'badge',
-                    label: 'Badge 标记'
-                  }]
-                }, {
-                  value: 'notice',
-                  label: 'Notice',
-                  children: [{
-                    value: 'alert',
-                    label: 'Alert 警告'
-                  }, {
-                    value: 'loading',
-                    label: 'Loading 加载'
-                  }, {
-                    value: 'message',
-                    label: 'Message 消息提示'
-                  }, {
-                    value: 'message-box',
-                    label: 'MessageBox 弹框'
-                  }, {
-                    value: 'notification',
-                    label: 'Notification 通知'
-                  }]
-                }, {
-                  value: 'navigation',
-                  label: 'Navigation',
-                  children: [{
-                    value: 'menu',
-                    label: 'NavMenu 导航菜单'
-                  }, {
-                    value: 'tabs',
-                    label: 'Tabs 标签页'
-                  }, {
-                    value: 'breadcrumb',
-                    label: 'Breadcrumb 面包屑'
-                  }, {
-                    value: 'dropdown',
-                    label: 'Dropdown 下拉菜单'
-                  }, {
-                    value: 'steps',
-                    label: 'Steps 步骤条'
-                  }]
-                }, {
-                  value: 'others',
-                  label: 'Others',
-                  children: [{
-                    value: 'dialog',
-                    label: 'Dialog 对话框'
-                  }, {
-                    value: 'tooltip',
-                    label: 'Tooltip 文字提示'
-                  }, {
-                    value: 'popover',
-                    label: 'Popover 弹出框'
-                  }, {
-                    value: 'card',
-                    label: 'Card 卡片'
-                  }, {
-                    value: 'carousel',
-                    label: 'Carousel 走马灯'
-                  }, {
-                    value: 'collapse',
-                    label: 'Collapse 折叠面板'
-                  }]
-                }]
-              }, {
-                value: 'ziyuan',
-                label: '资源',
-                children: [{
-                  value: 'axure',
-                  label: 'Axure Components'
-                }, {
-                  value: 'sketch',
-                  label: 'Sketch Templates'
-                }, {
-                  value: 'jiaohu',
-                  label: '组件交互文档'
-                }]
-              }]
         }
     },
     components: {
@@ -209,9 +11,154 @@ export default {
         'v-slip': Slip,
         'v-top': Top
     },
+    mounted () {
+      //this.initTree();
+      this.dimensionalThree();
+      //this.initTexture();
+    },
     methods: {
-        next(){
-            this.active++;
+        initTree(){
+          //场景
+          let scene=new this.three.Scene();
+          //相机
+          let camera=new this.three.PerspectiveCamera(80, window.innerWidth/window.innerHeight, 0.1, 1000);
+          //渲染器
+          let renderer=new this.three.WebGLRenderer();
+          //设置渲染器的大小为窗口的内宽度，也就是内容区的宽度
+          renderer.setSize(window.innerWidth, window.innerHeight);
+          //装载容器
+          document.getElementById('webGL').appendChild(renderer.domElement);
+          //几何体(CubeGeometry)
+          let geometry=new this.three.CubeGeometry(1,1,1);
+          let material = new this.three.MeshBasicMaterial({color: 0x00ff00});
+          let cube = new this.three.Mesh(geometry, material); scene.add(cube);
+          camera.position.z = 5;
+          //渲染
+          function render(){
+            requestAnimationFrame(render)
+            /** 
+             * 正方体旋转
+             * */
+            cube.rotation.x -= 0.1;
+            cube.rotation.y += 0.1;
+            cube.rotation.z += 0.1;
+            /** 
+             * 移动
+            */
+            // cube.position.x+=0.01;
+            // cube.position.y+=0.01;
+            renderer.render(scene,camera);
+          }
+          render();
+        },
+        //
+        dimensionalThree(){
+          /**
+           * 渲染器
+           */
+          //定义渲染器
+          let renderer=new this.three.WebGLRenderer({antialias : true});
+          //给渲染器添加宽度和高度
+          renderer.setSize(window.innerWidth, window.innerHeight);
+          //将渲染器绑定到div画布上
+          document.getElementById('webGL').appendChild(renderer.domElement);
+          //设置渲染器的颜色
+          renderer.setClearColor(0xFFFFFF, 1.0);
+          /** 
+           * 相机
+          */
+          //定义一个相机
+          let camera=new this.three.PerspectiveCamera(45,window.innerWidth/window.innerHeight,1,1000);
+          //设置相机的角度
+          camera.position.x = 100;
+          camera.position.y = 300;
+          camera.position.z = 600;
+          camera.up.x = 0;
+          camera.up.y = 1;
+          camera.up.z = 0;
+          camera.lookAt({
+              x : 0,
+              y : 0,
+              z : 0
+          });
+          /**
+           * 场景
+           */
+          //定义场景
+          let scene=new this.three.Scene();
+          //构造一个几何体
+          let geometry = new this.three.BoxGeometry(100, 100, 100);
+          for( let i = 0; i < geometry.faces.length; i += 2 ) {
+            let hex = Math.random() * 0xffffff;
+            geometry.faces[ i ].color.setHex( hex );
+            geometry.faces[ i + 1 ].color.setHex( hex );
+          }
+          //设置这个几何体的材质
+          let material = new this.three.MeshBasicMaterial({ vertexColors: this.three.FaceColors} );
+          //定义一个模型网格,将几何体装载上去
+          let mesh = new this.three.Mesh( geometry,material);
+          //给这个模型网格构造一个线条
+          mesh.position.set(0,0,0);
+          //添加到场景之中
+          scene.add(mesh);
+
+          let helper=new this.three.GridHelper(1000,50,0x0000ff,0x808080);
+          scene.add(helper);
+          /*** 
+           * 设置光源
+          */
+          //定义光源(方向光)
+          // let light=new this.three.DirectionalLight(0xFF0000,1);
+          // //设置光源角度
+          // light.position.set(0,0,1);
+          // //将光源添加进场景之中
+          // scene.add(light);
+          // //设置环境光
+          // light=new this.three.AmbientLight(0x00FF00);
+          // light.position.set(100, 100, 200);
+          // scene.add(light);
+          // //设置点光源
+          // light = new this.three.PointLight(0xFF0000);
+          // light.position.set(0, 0,75);
+          // scene.add(light);
+          //清空渲染器
+          renderer.clear();
+          //加载渲染器
+          function render(){
+            mesh.rotation.x += 0.1;
+            mesh.rotation.y += 0.1;
+            renderer.render(scene,camera);
+            requestAnimationFrame(render)
+          }
+          render();
+        },
+        //纹理
+        initTexture(){
+          let renderer =new this.three.WebGLRenderer();
+          renderer.setSize( window.innerWidth, window.innerHeight );
+          document.getElementById('webGL').appendChild(renderer.domElement);
+          let camera = new this.three.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 1, 1000 );
+          camera.position.z = 400;
+          let scene = new this.three.Scene();
+          let geometry = new this.three.PlaneGeometry( 500, 300, 1, 1 );
+          geometry.vertices[0].uv = new this.three.Vector2(0,0);
+          geometry.vertices[1].uv = new this.three.Vector2(2,0);
+          geometry.vertices[2].uv = new this.three.Vector2(2,2);
+          geometry.vertices[3].uv = new this.three.Vector2(0,2);
+          let texture = this.three.ImageUtils.loadTexture("./../../../images/logo.png",null,function(t){});
+          let material = new this.three.MeshBasicMaterial({map:texture});
+          let mesh = new this.three.Mesh( geometry,material );
+          scene.add( mesh );
+          window.addEventListener( 'resize',function(){
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize( window.innerWidth, window.innerHeight );
+          }, false );
+          function render(){
+            renderer.render(scene,camera);
+            requestAnimationFrame(render)
+          }
+          render();
         }
     }
 }
