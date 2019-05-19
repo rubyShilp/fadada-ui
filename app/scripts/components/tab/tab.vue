@@ -16,7 +16,7 @@
                                 <fa-table-column type='expand'>
                                     <div class="classPadding">12</div>
                                 </fa-table-column>
-                                <fa-table-column label='文件名称' width='20' prop='name'></fa-table-column>
+                                <fa-table-column label='文件名称'  prop='name'></fa-table-column>
                                 <fa-table-column label='发件人' prop='userName'></fa-table-column>
                                 <fa-table-column label='发起时间' prop='dateTime'></fa-table-column>
                                 <fa-table-column label='文件状态' prop='status'></fa-table-column>
@@ -45,8 +45,10 @@
             </div>
 
             <h3>Examples2 #</h3>
+            
             <div class="appwarp fddui-margintop-20">
-                <fa-table :data='dataList' :header-cell-style="{background:'#f7f8fa'}" @selection-change="handleSelectChange">
+                <fa-tooltip content='12312'><div>12223</div></fa-tooltip>
+                <fa-table :data='dataList' tooltip-effect="dark" :header-cell-style="{background:'#f7f8fa'}" @selection-change="handleSelectChange">
                     <fa-table-column type="selection" width="55"></fa-table-column>
                     <fa-table-column label='文件名称' prop='name' width='100' :show-overflow-tooltip="true"></fa-table-column>
                     <fa-table-column label='发件人' prop='userName'></fa-table-column>

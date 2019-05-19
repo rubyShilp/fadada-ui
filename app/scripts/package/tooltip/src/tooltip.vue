@@ -1,8 +1,8 @@
 <template>
-<span class="fddv4-txt-word" v-if="content">
-    <span class="fddv4-txt-omitted">{{content}}</span>
-    <div class="fddv4-txt-strong" :class="{'jt-bottom':rowIndex!==0}">{{content}}</div>
-</span>
+<div role="tooltip" id="fa-tooltip-2171" aria-hidden="true" class="fa-tooltip__popper is-dark" style="transform-origin: center bottom; z-index: 2015; display: none;">
+    {{content}}
+    <div x-arrow="" class="popper__arrow" style="left: 66px;"></div>
+</div>
 </template>
 <script>
 export default {

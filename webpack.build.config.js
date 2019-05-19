@@ -6,13 +6,13 @@ const MiniCssExtractPlugin=require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 module.exports={
     entry:{
-        'main': ['./scripts/package/index.js']
+        'index': ['./scripts/package/index.js']
     },
     context: path.join(process.cwd(), 'app'),
     output: {
         path: path.join(__dirname, './lib'),
         publicPath:'/',
-        filename: 'index.js',
+        filename: '[name].js',
         library: 'fadada-ui',
         libraryTarget: 'umd',
         umdNamedDefine: true
@@ -22,7 +22,10 @@ module.exports={
             'node_modules',
             path.resolve(process.cwd(), 'app')
         ],
-        extensions: ['.vue','.js','.css','.less']
+        alias: {
+            'vue':path.resolve(process.cwd(), './node_modules/vue/dist/vue.min.js'),
+        },
+        extensions: ['.vue','.js','.less','.css']
     },
     module:{
         rules: [
@@ -46,7 +49,12 @@ module.exports={
             {
                 test:/\.less$/,
                 use:[
-                    MiniCssExtractPlugin.loader,
+                    {
+                        loader:MiniCssExtractPlugin.loader,
+                        options:{
+                            publicPath:'./'
+                        }  
+                    },
                     "css-loader",
                     "less-loader"
                 ]
@@ -54,7 +62,12 @@ module.exports={
             {
                 test: /\.css$/,
                 use: [
-                  MiniCssExtractPlugin.loader,
+                    {
+                        loader:MiniCssExtractPlugin.loader,
+                        options:{
+                            publicPath:'./'
+                        }  
+                    },
                   "css-loader"
                 ]
             }

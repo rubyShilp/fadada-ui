@@ -1,19 +1,19 @@
 import { getCell, getColumnByCell, getRowIdentity } from './util';
 import { getStyle, hasClass, addClass, removeClass } from './../../utils/dom.js';
-import ElCheckbox from './../../checkbox';
-import ElTooltip from './../../tooltip';
+//import faCheckbox from './../../checkbox';
+//import faTooltip from './../../tooltip/index.js';
 import {debounce} from 'throttle-debounce';
 import LayoutObserver from './layout-observer';
 
 export default {
-  name: 'ElTableBody',
+  name: 'faTableBody',
 
   mixins: [LayoutObserver],
 
-  components: {
-    ElCheckbox,
-    ElTooltip
-  },
+  // components: {
+  //   faCheckbox,
+  //   faTooltip
+  // },
 
   props: {
     store: {

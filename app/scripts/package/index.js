@@ -3,6 +3,8 @@ import './styles/index.less';
 import Message from './message/index.js';
 import Loading from './loading/index.js';
 import locale from './locale/index.js';
+import faPopover from './popover/index.js';
+import faTooltip from './tooltip/index.js';
 import faInput from './input/index.js';
 import faSelect from './select/index.js';
 import faCascader from './cascader/index.js';
@@ -13,7 +15,6 @@ import faRadio from './radio/index.js';
 import faRadioButton from './radio-button/index.js';
 import faRadioGroup from './radio-group/index.js';
 import faCheckbox from './checkbox/index.js';
-import faTooltip from './tooltip/index.js';
 import faTable from './table/index.js';
 import faTableColumn from './table-column/index.js';
 import faCityPicker from './cityPicker/index.js';
@@ -39,8 +40,9 @@ import faCol from './layoutCol/index.js';
 import faSteps from './steps/index.js';
 import faStep from './step/idnex.js';
 import faToggleButton from './toggleButton/index.js';
-import faPopover from './popover/index.js';
 const components={
+    faPopover,
+    faTooltip,
     faTag,
     faInput,
     faSelect,
@@ -51,7 +53,6 @@ const components={
     faRadioButton,
     faRadioGroup,
     faCheckbox,
-    faTooltip,
     faTable,
     faTableColumn,
     faCityPicker,
@@ -76,8 +77,7 @@ const components={
     faCol,
     faSteps,
     faStep,
-    faToggleButton,
-    faPopover
+    faToggleButton
 }
 const install = function(Vue, opts = {}) {
     locale.use(opts.locale);
@@ -97,17 +97,18 @@ module.exports={
     locale: locale.use,
     i18n: locale.i18n,
     install,
+    faPopover,
+    faTooltip,
+    faTag,
     faInput,
     faSelect,
     faCascader,
     faOption,
-    faTag,
     faCard,
     faRadio,
     faRadioButton,
     faRadioGroup,
     faCheckbox,
-    faTooltip,
     faTable,
     faTableColumn,
     faCityPicker,
@@ -132,7 +133,6 @@ module.exports={
     faCol,
     faSteps,
     faStep,
-    faToggleButton,
-    faPopover
+    faToggleButton
 }
 module.exports.default = module.exports;

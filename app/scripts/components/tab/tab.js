@@ -1,7 +1,6 @@
 import Menu from './../../util/components/common/menu.vue';
 import Slip from './../../util/components/common/slip.vue';
 import Top from './../../util/components/common/top.vue';
-import faTooltip from './../../package/tooltip/src/main';
 import axios from 'axios';
 
 export default {
@@ -23,7 +22,6 @@ export default {
         'v-menu': Menu,
         'v-slip': Slip,
         'v-top': Top,
-        'fa-tooltip':faTooltip
     },  
     methods: {
         handleCurrentChange(row){
