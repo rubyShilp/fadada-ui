@@ -90,6 +90,9 @@ module.exports={
         new VueLoaderPlugin(),
         new webpack.ProgressPlugin(),
         new webpack.HotModuleReplacementPlugin(),
+        // new webpack.CommonsChunkPlugin({
+        //     name:'init'
+        // }),
         new MiniCssExtractPlugin({
             filename: "main-blue.css",
         }),

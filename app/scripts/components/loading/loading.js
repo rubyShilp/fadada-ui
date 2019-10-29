@@ -21,9 +21,9 @@ export default {
         showloading(status) {
             if (status == 1) {
                this.$loading(true);
-                setTimeout(()=>{
-                    this.$loading(false);
-                },2000)
+                // setTimeout(()=>{
+                //     this.$loading(false);
+                // },2000)
             } else if (status == 2) {
                 this.$loading(true);
                 setTimeout(()=>{

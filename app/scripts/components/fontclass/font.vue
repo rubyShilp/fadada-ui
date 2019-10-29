@@ -2,8 +2,8 @@
     <div>
         <v-top></v-top>
         <div class="fdd-warp">
-            <!-- {{ $t('message.findMusic') }}
-            <fa-button type='own' disabled>12312</fa-button> -->
+            {{ $t('message.findMusic') }}
+            <fa-button type='own' disabled>12312</fa-button>
         </div>
         
         <!-- <fa-document-edit></fa-document-edit> -->

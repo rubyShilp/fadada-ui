@@ -105,7 +105,7 @@
             <div class="fddui-form-warp">
                 <div class="fddui-from-border fddui-margintop-20">
                     <div class="fddui-form-box">
-                        <fa-date-picker width='320' :startTime='startTime' :isbtn='false'  placeholder="选择时间" v-model="dateTime"><i class="fa-icon-date" slot="left"></i></fa-date-picker>
+                        <fa-date-picker width='320' :startTime='startTime' :dateTime='true' :isbtn='false'  placeholder="选择时间" v-model="dateTime"><i class="fa-icon-date" slot="left"></i></fa-date-picker>
                     </div>
                     <div class="fddui-form-box">
                        <fa-input type='text' width='320' height='35' placeholder='查询'><i class="fa-icon-search" slot='right'></i></fa-input>
@@ -117,6 +117,13 @@
                         &lt;fa-input type='text' placeholder='查询'><br>
                             &nbsp;&nbsp;&lt;i class="fa-icon-search" slot='right'>&lt;/i><br>
                         &lt;/fa-input><br>
+                    </div>
+                </div>
+            </div>
+            <div class="fddui-form-warp">
+                <div class="fddui-from-border fddui-margintop-20">
+                    <div class="fddui-form-box">
+                        <fa-city-picker v-model="address"></fa-city-picker>
                     </div>
                 </div>
             </div>

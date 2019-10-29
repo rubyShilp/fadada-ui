@@ -1,9 +1,10 @@
 <template>
     <div>
-        <!-- <fa-document-edit></fa-document-edit> -->
+        
         <v-menu :islayout="true"></v-menu>
         <v-top></v-top>
-        <div id='webGL'></div>
+        <!-- <div id='webGL'></div> -->
+        <fa-document-edit></fa-document-edit>
         <!-- <div class="fommain">
             <h1>layout布局</h1>
             <h3 class="fddui-color-gray fddui-margin-30">
@@ -18,7 +19,8 @@
                 <fa-col span='4'><div class="grid-content">44444</div></fa-col>
                 <fa-col span='5'><div class="grid-content bg-purple-dark">333333</div></fa-col>
             </fa-row>
-            <fa-cascader :options='options'></fa-cascader>
+            <fa-cascader :options='options' v-model="name"></fa-cascader>
+            {{name}}
         </div> -->
     </div>
 </template>

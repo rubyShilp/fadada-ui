@@ -4,9 +4,9 @@
         <!-- <div class="fa-input-label" :class="{'float':!focus && !model}">{{label}}</div> -->
         <div class="fa-text-field fa-input-content fa-select-position fa-input-border" :class="{'cur':focus}">
             <div style="margin-left:3px"><slot name="left"></slot></div>
-            <input :type='type' class="fa-text-field-input" :maxlength="maxlength" :placeholder="placeholder" v-model="model"
+            <input :type='type' ref="input" class="fa-text-field-input" :maxlength="maxlength" :placeholder="placeholder" v-model="model"
             @focus="focues();focus = true" 
-            @blur="blurs();focus = false" @change="handleChange" @keydown="keyDowns()" @keypress="keyPress()" @keyup="keyUp()" @click="handleClick" :disabled="disabled">
+            @blur="blurs();focus = false" @change="handleChange" @keydown="keyDowns()" @keypress="keyPress()" @keyup="keyUp()" @click="handleClick" :disabled="disabled" />
             <div style="margin-right:3px"><slot name="right"></slot></div>
             <!-- <div>
                 <div class="fa-input-line"></div>
@@ -65,7 +65,7 @@ export default {
         disabled:{
             type:Boolean,
             default:false
-        },
+        }
     },
     data(){
         return{

@@ -15,7 +15,29 @@ export default {
             ],
             showtab01:false,
             showcode:false,
-            showpage:false
+            showpage:false,
+            treeList:[{
+                id: 'l1_1',
+                label: '一级节点1',
+                children: [{
+                  label: '节点1-1',
+                  id: 'l1_1_1',
+                }, {
+                  label: '节点1-2',
+                  id: 'l1_1_2',
+                }, {
+                  
+                  label: '节点1-3',
+                  id: 'l1_1_3',
+                }]
+              }, {
+                label: '一级节点2',
+                id: 'l1_2',
+                children: [{
+                  label: '节点2-1',
+                  id: 'l1_2_1',
+                }]
+              }]
         }
     },
     components: {
@@ -23,6 +45,12 @@ export default {
         'v-slip': Slip,
         'v-top': Top,
     },  
+    created(){
+        this.$nextTick(() => {
+            // treeBox 元素的ref   value 绑定的node-key
+           this.$refs.treeBox.setCurrentKey(this.treeList[0].id); 
+       });
+    },
     methods: {
         handleCurrentChange(row){
             console.log(row);

@@ -13,9 +13,13 @@
 	top:0;
 	left: 0;
 	right:0;
+	background: rgba(0,0,0,.2);
+	display: flex;
+    flex-direction: column;
 	img {
 		position: absolute;
 		float: left;
+		align-self: center;
 		width: 55px;
 		height: 55px;
 		margin-left: -28px;

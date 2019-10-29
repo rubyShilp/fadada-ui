@@ -4,11 +4,13 @@
     <div class="fa-select fa-input-content fa-select-position" :class="{'is-open':!focus}">
         <div class="fa-select-content">
             <input tabindex="0"  class="fa-select-input" type="hidden"  v-model="model"/>
-            <input class="fa-select-input" @click="selectPciker()"   @focus.stop="focus = true;"  readonly
+            <input class="fa-select-input" @click="selectPciker()" v-model="model"  @focus.stop="focus = true;"  readonly
             @blur="focus = false;" :placeholder="placeholder"  @change="handleChange" :disabled="disabled"  ref="values">
+           
         </div>
-        <div class="fa-select-action">
-            <svg viewBox="0 0 24 24" class="fa-select-icon"><path d="M7 10l5 5 5-5z"></path></svg>
+        <div class="fa-select-action" @click="selectPciker()" >
+            <i :class="{'fa-icon-caret-bottom':!showCityHide,'fa-icon-caret-top':showCityHide}"></i>
+            <!-- <svg viewBox="0 0 24 24" class="fa-select-icon"><path d="M7 10l5 5 5-5z"></path></svg> -->
         </div>
         <div>
             <div class="fa-input-line"></div>
@@ -165,6 +167,10 @@ export default {
             type:Boolean,
             default:false
         },
+        value:{
+            type:String,
+            default:''
+        },
         placeholder:{
             type:String,
             default:'请选择省市区'
@@ -203,7 +209,7 @@ export default {
             if(this.model===''){
                 this.$emit('input','');
             }
-            this.showCityHide=true;
+            this.showCityHide=!this.showCityHide;
             this.province='请选择';
             this.city='请选择';
             this.county='请选择';

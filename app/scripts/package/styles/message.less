@@ -1,16 +1,17 @@
 .layerTips{
     position: fixed;
 	z-index: 999;
-	text-align: center;
+    text-align: center;
 	width: 100%;
     height: 100%;
-	top:0;
+	top:18px;
 	left: 0;
     right:0;
-    padding-top: 10%;
+    display: flex;
+    flex-direction: column;
 }
 .layerTipsBox{
-    display: inline-block;
+    display:inline-block;
     padding:15px 20px;
     background: rgba(0,0,0,0.7);
     z-index: 999;
@@ -18,15 +19,17 @@
     -webkit-border-radius: 3px;
     color:white;
     font-size: 14px;
-    width: 20%;
+    min-width: 240px;
     text-align: left;
     overflow: hidden;
     word-break: break-all;
     word-wrap: break-word;
     white-space: normal;
+    align-self: center;
 }
 .fa_tips_box_success{
-    background: #f0f9eb;
+    background: #f0f9ec;
+    border: solid 1px #e0f3d7;
     color: #67c23a;
 }
 .fa_tips_box_info{
@@ -34,12 +37,14 @@
     color: #909399
 }
 .fa_tips_box_warning{
-    background: #fdf6ec;
-    color: #e6a23c
+    background: #fff7e5;
+    border: solid 1px #ffe299;
+    color: #ffb600
 }
 .fa_tips_box_danger{
     background: #fef0f0;
-    color: #f56c6c
+    border:solid 1px #ffd7d3;
+    color: #ff5846
 }
 .fa_tips_box_own{
     background: #FFFFCC;

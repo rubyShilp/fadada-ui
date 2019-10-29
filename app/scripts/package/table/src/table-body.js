@@ -1,7 +1,7 @@
 import { getCell, getColumnByCell, getRowIdentity } from './util';
 import { getStyle, hasClass, addClass, removeClass } from './../../utils/dom.js';
 //import faCheckbox from './../../checkbox';
-//import faTooltip from './../../tooltip/index.js';
+import faTooltip from './../../tooltip/index.js';
 import {debounce} from 'throttle-debounce';
 import LayoutObserver from './layout-observer';
 
@@ -10,10 +10,9 @@ export default {
 
   mixins: [LayoutObserver],
 
-  // components: {
-  //   faCheckbox,
-  //   faTooltip
-  // },
+  components: {
+    faTooltip
+  },
 
   props: {
     store: {
@@ -119,8 +118,6 @@ export default {
                 </tr>)
                 : ''
               ]
-            ).concat(
-              <fa-tooltip effect={ this.table.tooltipEffect } placement="top" ref="tooltip" content={ this.tooltipContent }></fa-tooltip>
             )
           }
         </tbody>
@@ -357,7 +354,7 @@ export default {
         tooltip.referenceElm = cell;
         tooltip.$refs.popper && (tooltip.$refs.popper.style.display = 'none');
         tooltip.doDestroy();
-        tooltip.setExpectedState(true);
+        //tooltip.setExpectedState(true);
         this.activateTooltip(tooltip);
       }
     },
@@ -365,8 +362,8 @@ export default {
     handleCellMouseLeave(event) {
       const tooltip = this.$refs.tooltip;
       if (tooltip) {
-        tooltip.setExpectedState(false);
-        tooltip.handleClosePopper();
+        //tooltip.setExpectedState(false);
+        //tooltip.handleClosePopper();
       }
       const cell = getCell(event);
       if (!cell) return;

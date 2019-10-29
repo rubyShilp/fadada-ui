@@ -8,6 +8,8 @@
     left: 0;
     top: 0;
     z-index: 999;
+    display: flex;
+    flex-direction: column;
   }
   .fixed-pop-tit {
     padding: 10px 20px;
@@ -29,20 +31,16 @@
     position: relative;
   }
   .com-pop {
-    position: absolute;
+    position: relative;
     border-radius: 3px;
     -webkit-border-radius: 3px;
     -o-border-radius: 3px;
     -moz-border-radius: 3px;
     min-height: 154px;
     min-width: 500px;
-    left: 45%;
-    padding-bottom: 10px;
     background: white;
-    margin-left: -200px;
-    margin-top: -82px;
-    top: 20%;
-	z-index:20;
+    align-self: center;
+    top:85px;
   }
   .com-pop-text {
     margin:15px 15px 0 15px;
@@ -54,7 +52,7 @@
     display: inline-block;
     vertical-align: middle;
     z-index: 999;
-    right: 20px;
+    right: 22px;
     top: 15px;
     color:#ccc;
     background-position: -109px -2px;

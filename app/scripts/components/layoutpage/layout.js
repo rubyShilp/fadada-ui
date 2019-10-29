@@ -4,6 +4,10 @@ import Top from './../../util/components/common/top.vue';
 export default {
     data() {
         return {
+          name:'',
+          options:[
+            {label:'IT服务',value:'111',children:[{label:'12',value:'222'},{label:'13',value:'224'},{label:'14',value:'225'}]}
+          ]
         }
     },
     components: {
@@ -13,7 +17,7 @@ export default {
     },
     mounted () {
       //this.initTree();
-      this.dimensionalThree();
+      //this.dimensionalThree();
       //this.initTexture();
     },
     methods: {

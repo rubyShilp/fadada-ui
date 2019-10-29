@@ -12,6 +12,7 @@ export default {
             userPassword:'',
             labelPosition:'left',
             dateTime:'',
+            address:'内蒙古-包头-青山区',
             startTime:new Date('2019-01-28').getTime()
         }
     },
