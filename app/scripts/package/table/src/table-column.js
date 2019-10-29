@@ -300,7 +300,7 @@ export default {
         renderCell = DEFAULT_RENDER_CELL;
       }
       return _self.showOverflowTooltip || _self.showTooltipWhenOverflow
-        ? <fa-tooltip  ref="tooltip" style={ {width: (data.column.realWidth || data.column.width) - 1 + 'px'} } content={ renderCell(h, data) }></fa-tooltip>
+        ? <fa-tooltip  ref="tooltip" rowIndex={data.$index} style={ {width: (data.column.realWidth || data.column.width) - 1 + 'px'} } content={ renderCell(h, data)}></fa-tooltip>
         : <div class="cell">{ renderCell(h, data) }</div>;
     };
   },

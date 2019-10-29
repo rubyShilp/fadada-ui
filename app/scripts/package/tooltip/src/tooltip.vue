@@ -1,9 +1,9 @@
 <template>
-<div role="tooltip" class="fdd-text-tips">
+<div role="tooltip" ref="popper" class="fdd-text-tips" @mouseover="mouseOver(rowIndex)" @mouseout="mouseOut(rowIndex)">
     <span class="text-hide">
         {{content}}
     </span> 
-    <div class="fdd-text-word">
+    <div class="fdd-text-word" style="display:none">
         {{content}}
     </div>
 </div>
@@ -33,7 +33,28 @@ export default {
         }
     },
     methods:{
-        
+      getTextWidth(str) {
+          var width = 0;
+          var html = document.createElement('span');
+          html.innerText = str;
+          html.className = 'getTextWidth';
+          document.querySelector('body').appendChild(html);
+          width = document.querySelector('.getTextWidth').offsetWidth;
+          document.querySelector('.getTextWidth').remove();
+          return width;
+      },
+      mouseOver(){
+        let length=this.getTextWidth(this.content);
+        let divWidth=parseInt(this.$refs.popper.style.width);
+        if(length>divWidth){
+          let n=document.getElementsByClassName('fdd-text-word')[this.rowIndex];
+          n.style.display='inline-block';
+        }
+      },
+      mouseOut(){
+        let n=document.getElementsByClassName('fdd-text-word')[this.rowIndex];
+        n.style.display='none';
+      }
     }
 }
 </script>
@@ -54,11 +75,11 @@ export default {
       top:14px;
     }
   }
-  &:hover{
-    .fdd-text-word{
-      display: inline-block;
-    }
-  }
+  // &:hover{
+  //   .fdd-text-word{
+  //     display: inline-block;
+  //   }
+  // }
   .fdd-text-mornal{
     width: 95%;
     display: inline-block;
