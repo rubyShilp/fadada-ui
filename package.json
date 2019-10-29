@@ -50,7 +50,7 @@
   },
   "devDependencies": {
     "async-validator": "^1.8.5",
-    "axios": "^0.16.2",
+    "axios": "^0.18.1",
     "deepmerge": "^2.1.1",
     "marked": "^0.4.0",
     "md5": "^2.2.1",
