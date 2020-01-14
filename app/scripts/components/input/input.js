@@ -13,7 +13,8 @@ export default {
             labelPosition:'left',
             dateTime:'',
             address:'内蒙古-包头-青山区',
-            startTime:new Date('2019-01-28').getTime()
+            startTime:new Date('2020-01-15').getTime(),
+            endTime:new Date('2020-02-20').getTime(),
         }
     },
     components: {
@@ -26,7 +27,6 @@ export default {
             if (status == 0) {
                 this.labelPosition='left';
             } else if (status == 1) {
-                console.log(123);
                 this.labelPosition='right';
             } else {
                 this.labelPosition='top';

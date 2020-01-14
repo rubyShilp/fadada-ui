@@ -105,7 +105,7 @@
             <div class="fddui-form-warp">
                 <div class="fddui-from-border fddui-margintop-20">
                     <div class="fddui-form-box">
-                        <fa-date-picker width='320' :startTime='startTime' :dateTime='true' :isbtn='false'  placeholder="选择时间" v-model="dateTime"><i class="fa-icon-date" slot="left"></i></fa-date-picker>
+                        <fa-date-picker width='320' :startTime='startTime' :endTime='endTime' :dateTime='true' :isbtn='false'  placeholder="选择时间" v-model="dateTime"><i class="fa-icon-date" slot="left"></i></fa-date-picker>
                     </div>
                     <div class="fddui-form-box">
                        <fa-input type='text' width='320' height='35' placeholder='查询'><i class="fa-icon-search" slot='right'></i></fa-input>

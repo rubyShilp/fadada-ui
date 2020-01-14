@@ -51,7 +51,7 @@
             </ol>
             <ul v-for="(day,index) of days" :key="day">
                 <li v-for="d of day" :key="d" @click="choiceDay(d)">
-                  <a href="javascript:;" :style="{'background':(dateYear===d.year && dateMonth===d.month&& dateDay===d.today)?color:''}" :class="{'hover':dateYear===d.year && dateMonth===d.month&& dateDay===d.today,'disabled':(dateMonth-1)===d.month || (dateMonth+1)===d.month,'disabled_click':d.isDisabled}">{{d.today}}</a>
+                  <a href="javascript:;" :style="{'background':(dateYear===d.year && dateMonth===d.month&& dateDay===d.today)?color:''}" :class="{'hover':dateYear===d.year && dateMonth===d.month&& dateDay===d.today,'disabled':(dateMonth-1)===d.month || (dateMonth+1)===d.month,'disabled_click':d.isDisabled || d.isEndDisabled}">{{d.today}}</a>
                 </li>
             </ul>
         </div><!-- 日 -->

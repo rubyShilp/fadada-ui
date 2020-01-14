@@ -35,6 +35,10 @@ export default {
             type:String,
             default:''  
         },
+        endTime:{
+            type:String,
+            default:''  
+        },
         dateTime:{
             type: Boolean,
             default:false
@@ -114,6 +118,13 @@ export default {
             let startDate=new Date(this.startTime).getDate();
             return new Date(startYear,startMonth,startDate).getTime();
         },
+        //获取当前startTime的毫秒数
+        endDateTime(){
+            let endYear=new Date(this.endTime).getFullYear();
+            let endMonth=new Date(this.endTime).getMonth()+1;
+            let endDate=new Date(this.endTime).getDate();
+            return new Date(endYear,endMonth,endDate).getTime();
+        },
         //计算日历表
         dateCalendar(year, month) {
             //清空日期数组
@@ -137,6 +148,7 @@ export default {
                 lastYear = lastYear - 1;
             }
             let startDateTime=this.startDateTime();
+            let endDateTime=this.endDateTime();
             //根据上月天数获取后七天的数据
             var count = 0;
             for (let i = 1; i <= lastDays; i++) {
@@ -145,7 +157,8 @@ export default {
                         year: lastYear,
                         month: lastMonth,
                         today: i,
-                        isDisabled:startDateTime>(new Date(lastYear,lastMonth,i).getTime())
+                        isDisabled:startDateTime?startDateTime>(new Date(lastYear,lastMonth,i).getTime()):false,
+                        isEndDisabled:endDateTime?endDateTime<(new Date(lastYear,lastMonth,i).getTime()):false
                     });
                 }
             }
@@ -155,7 +168,8 @@ export default {
                     year: year,
                     month: month,
                     today: i,
-                    isDisabled:startDateTime>(new Date(year,month,i).getTime())
+                    isDisabled:startDateTime?startDateTime>(new Date(year,month,i).getTime()):false,
+                    isEndDisabled:endDateTime?endDateTime<(new Date(year,month,i).getTime()):false
                 });
             }
             //获取下月后14天的数据
@@ -171,7 +185,8 @@ export default {
                     year: dateYear,
                     month: dateMonth,
                     today: i,
-                    isDisabled:startDateTime>(new Date(dateYear,dateMonth,i).getTime())
+                    isDisabled:startDateTime?startDateTime>(new Date(dateYear,dateMonth,i).getTime()):false,
+                    isEndDisabled:endDateTime?endDateTime<(new Date(dateYear,dateMonth,i).getTime()):false
                 });
             }
             //日历循环行数
@@ -228,7 +243,7 @@ export default {
         //选中日期
         choiceDay(data){
             //event.stopPropagation();
-            if(data.isDisabled){
+            if(data.isDisabled || data.isEndDisabled){
                 return;
             }
             this.dateYear=data.year;
