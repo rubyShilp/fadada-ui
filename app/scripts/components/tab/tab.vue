@@ -9,6 +9,19 @@
             </h3>
             <h3>Examples1 #</h3>
             <div class="appwarp fddui-margintop-20">
+                <v-table :data='dataList'>
+                    <v-table-column label='文件名称' prop='name'></v-table-column>
+                    <v-table-column label='发件人' prop='userName'></v-table-column>
+                    <v-table-column label='发起时间' prop='dateTime'></v-table-column>
+                    <v-table-column label='文件状态' prop='status'></v-table-column>
+                    <v-table-column label='操作'>
+                        <template slot-scope="props">
+                            <a href="javaScript:;" @click="send(props.row)">查看</a>
+                        </template>
+                    </v-table-column>
+                </v-table>
+            </div>
+            <div class="appwarp fddui-margintop-20">
                 <fa-table :data='dataList' :header-cell-style="{background:'#f7f8fa'}" highlight-current-row  @current-change="handleCurrentChange">
                     <fa-table-column type='expand'>
                         <template slot-scope="props">
@@ -92,11 +105,12 @@
                 </div>
 
             <div class="appwarp fddui-margintop-20">
-                <fa-tree :data='treeList' ref="treeBox" default-expand-all highlight-current node-key="id"></fa-tree>
+                <fa-tree :data='treeList' ref="treeBox" :default-expand-all='false' highlight-current node-key="id"></fa-tree>
             </div>
             </div>
 
         </div>
     </div>
 </template>
-<script src="./tab.js"></script>
+<script src="./tab.js">
+</script>
